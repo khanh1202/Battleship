@@ -1,0 +1,5 @@
+Online Tools:
+
+- Telerik's Code Converter: http://converter.telerik.com/
+- SharpDevelop's SnippetConverter: http://codeconverter.sharpdevelop.net/SnippetConverter.aspx
+- DeveloperFusion's Convert VB.NET to C#: http://www.developerfusion.com/tools/convert/vb-to-csharp/
