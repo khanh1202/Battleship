@@ -1,1 +1,18 @@
 List of all noted bugs, fixes and todo comments
+
+MenuController.vb:
+- TODO: Line 172, untoggle line 
+- FIX: Line 244-247, fix the difficulty.
+
+UtilityFunctions.vb"
+- TODO: Line 101 and 121, untoggle line comment.
+
+GameController.vb
+- BUG: Line 79, wrong difficulty of AI.
+
+DeploymentController.vb
+- TODO: Line 118-123 and 133-139 and 146-147, untoggle line comments.
+
+Ship.vb
+- TODO: Name() Property needs more 
+
