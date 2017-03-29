@@ -1,0 +1,17 @@
+Coding Standards and Naming Convention
+------------------------------------------
+
+
+Note: 
+(+) Do
+(-) Do Not
+------------------------------------------
+
++ Use PascalCase for class names and method names.
++ Use camelCase for method parameters and method's local variables.
++ Use UPPER_CASE for constant names
+- Use abbreviation except some fimiliar name (eg html, ftp, http).
++ Use underscore at the beginning for private static variables (eg _ship, _grid).
++ Vertically align curly brackets.
++ Declare all member variables first, then declare constructor and all properties. Class methods are last.
++ Put your comments before all ambiguous lines of code.
