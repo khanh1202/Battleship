@@ -82,6 +82,7 @@ public class SeaGrid : ISeaGrid
 	/// <summary>
 	/// SeaGrid constructor, a seagrid has a number of tiles stored in an array
 	/// </summary>
+	///<param name="ships">Initial each tile on the grid</param>
 	public SeaGrid(Dictionary<ShipName, Ship> ships)
 	{
 		_GameTiles = new Tile[Width, Height];

@@ -40,6 +40,10 @@ public class Player : IEnumerable<Ship>
 		set { _enemyGrid = value; }
 	}
 
+	/// <summary>
+	/// Initiate the game pthe player belongs to and the grid the player deploys their ships
+	///</summary>
+	///<param name="controller"> the game the player is part of</param>
 	public Player(BattleShipsGame controller)
 	{
 		_game = controller;
@@ -198,6 +202,9 @@ public class Player : IEnumerable<Ship>
 		return result;
 	}
 
+	///<summary>
+	///Randomly deploy ships on the grid
+	///</summary>
 	public virtual void RandomizeDeployment()
 	{
 		bool placementSuccessful = false;

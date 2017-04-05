@@ -102,6 +102,9 @@ public class Ship
 		_tiles.Clear();
 	}
 
+	///<summary>
+	///Increase the number of made hits by 1
+	///</summary>
 	public void Hit()
 	{
 		_hitsTaken = _hitsTaken + 1;
@@ -115,6 +118,9 @@ public class Ship
 		get { return _tiles.Count > 0; }
 	}
 
+	///<summary>
+	///returns if all the ships are sunk
+	///</summary>
 	public bool IsDestroyed {
 		get { return Hits == Size; }
 	}
