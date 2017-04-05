@@ -62,6 +62,9 @@ public class AttackResult
 	/// Set the _Value to the PossibleAttack value
 	/// </summary>
 	/// <param name="value">either hit, miss, destroyed, shotalready</param>
+	/// <param name="text">a text to indicate the result of attack</param>
+	///<param name="row"> The row of the tile to get the attack result</param>
+	///<param name="column">The column of the tile to get the attack result</param>
 	public AttackResult(ResultOfAttack value, string text, int row, int column)
 	{
 		_Value = value;
@@ -76,6 +79,9 @@ public class AttackResult
 	/// </summary>
 	/// <param name="value">either hit, miss, destroyed, shotalready</param>
 	/// <param name="ship">the ship information</param>
+	/// <param name="text">a text to indicate the result of attack</param>
+	///<param name="row"> The row of the tile to get the attack result</param>
+	///<param name="column">The column of the tile to get the attack result</param>
 	public AttackResult(ResultOfAttack value, Ship ship, string text, int row, int column) : this(value, text, row, column)
 	{
 		_Ship = ship;

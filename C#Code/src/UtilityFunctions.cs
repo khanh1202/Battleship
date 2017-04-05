@@ -182,7 +182,7 @@ static class UtilityFunctions
 				continue;
 			rowTop = top + (cellGap + cellHeight) * s.Row + SHIP_GAP;
 			colLeft = left + (cellGap + cellWidth) * s.Column + SHIP_GAP;
-
+				//LeftRight
 			if (s.Direction == Direction.LeftRight) {
 				shipName = "ShipLR" + s.Size;
 				shipHeight = cellHeight - (SHIP_GAP * 2);
@@ -250,7 +250,12 @@ static class UtilityFunctions
 
 		SwinGame.DrawFramerate(675, 585, GameResources.GameFont("CourierSmall"));
 	}
-
+	
+	///<summary>
+	///Add an explosion or splash to the chain
+	///</summary>
+	///<param name="row">The row of the tile animation occurs</param>
+	///<param name="col">The column of the tile animation occurs</param>
 	public static void AddExplosion(int row, int col)
 	{
 		AddAnimation(row, col, "Splash");
@@ -261,7 +266,9 @@ static class UtilityFunctions
 		AddAnimation(row, col, "Splash");
 	}
 
-
+	///<summary>
+	///The list of sprites and add them to the animation
+	///</summary>
 	private static List<Sprite> _Animations = new List<Sprite>();
 	private static void AddAnimation(int row, int col, string image)
 	{
@@ -281,7 +288,10 @@ static class UtilityFunctions
 		s.StartAnimation("splash");
 		_Animations.Add(s);
 	}
-
+	
+	///<summary>
+	///Present new frame of animation
+	///</summary>
 	public static void UpdateAnimations()
 	{
 		List<Sprite> ended = new List<Sprite>();
@@ -297,7 +307,10 @@ static class UtilityFunctions
 			SwinGame.FreeSprite(s);
 		}
 	}
-
+	
+	///<summary>
+	///Draw a sprite to the screen
+	///</summary>
 	public static void DrawAnimations()
 	{
 		foreach (Sprite s in _Animations) {

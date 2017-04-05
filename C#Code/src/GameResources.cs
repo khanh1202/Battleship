@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using SwinGameSDK;
 
+//Load the images, sounds, music and free them
 public static class GameResources
 {
 

@@ -6,6 +6,8 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+
+///The Main entry of the game
 static class GameLogic
 {
 	public static void Main()

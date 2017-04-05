@@ -118,7 +118,13 @@ public static class GameController
 		DrawScreen();
 		SwinGame.RefreshScreen();
 	}
-
+	
+	///<summary>
+	///Do a number of animations after a missed or hit shot
+	///</summary>
+	///<param name="row">the row being hit</param>
+	///<param name="column">The column of the tile hit </param>
+	///<param name="showAnimation">Decide to show animation or not</param>
 	private static void PlayHitSequence(int row, int column, bool showAnimation)
 	{
 		if (showAnimation) {

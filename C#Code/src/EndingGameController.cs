@@ -20,6 +20,7 @@ static class EndingGameController
 	/// </summary>
 	public static void DrawEndOfGame()
 	{
+        //draw the placement of the enemy's ships 
 		UtilityFunctions.DrawField(GameController.ComputerPlayer.PlayerGrid, GameController.ComputerPlayer, true);
 		UtilityFunctions.DrawSmallField(GameController.HumanPlayer.PlayerGrid, GameController.HumanPlayer);
 

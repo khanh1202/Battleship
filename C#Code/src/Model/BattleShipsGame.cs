@@ -88,7 +88,8 @@ public class BattleShipsGame
 		if (_players[otherPlayer].IsDestroyed) {
 			newAttack = new AttackResult(ResultOfAttack.GameOver, newAttack.Ship, newAttack.Text, row, col);
 		}
-
+		
+		//mark a new hit as attacked
 		if (AttackCompleted != null) {
 			AttackCompleted(this, newAttack);
 		}

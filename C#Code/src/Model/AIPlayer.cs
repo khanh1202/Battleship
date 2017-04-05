@@ -19,6 +19,7 @@ public abstract class AIPlayer : Player
 	/// </summary>
 	protected class Location
 	{
+		
 		private int _Row;
 
 		private int _Column;

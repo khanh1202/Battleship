@@ -11,8 +11,12 @@ using System.Diagnostics;
 /// </summary>
 public interface ISeaGrid
 {
-
-
+	
+	/// <summary>
+	/// The size (Length, Height) of the grid
+	/// </summary>
+	/// <value>The width, height of the grid</value>
+	/// <returns>The width, height of the grid</returns>
 	int Width { get; }
 
 	int Height { get; }
