@@ -23,6 +23,7 @@ public class SeaGrid : ISeaGrid
 	private Dictionary<ShipName, Ship> _Ships;
 
 	private int _ShipsKilled = 0;
+    private static BattleShipsGame _theGame;
 	/// <summary>
 	/// The sea grid has changed and should be redrawn.
 	/// </summary>
@@ -187,8 +188,11 @@ public class SeaGrid : ISeaGrid
 			if (_GameTiles[row, col].Ship.IsDestroyed) {
 				_GameTiles[row, col].Shot = true;
 				_ShipsKilled += 1;
-				return new AttackResult(ResultOfAttack.Destroyed, _GameTiles[row, col].Ship, "destroyed the enemy's", row, col);
-			}
+                if (object.Equals(GameController.Game.Player, GameController.HumanPlayer))
+				    return new AttackResult(ResultOfAttack.Destroyed, _GameTiles[row, col].Ship, "destroyed the enemy's", row, col);
+                else
+                    return new AttackResult(ResultOfAttack.Destroyed, _GameTiles[row, col].Ship, "destroyed your", row, col);
+            }
 
 			//else hit but not destroyed
 			return new AttackResult(ResultOfAttack.Hit, "hit something!", row, col);

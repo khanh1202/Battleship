@@ -23,6 +23,11 @@ public static class GameController
 	private static Stack<GameState> _state = new Stack<GameState>();
 
 	private static AIOption _aiSetting;
+
+    public static BattleShipsGame Game
+    {
+        get { return _theGame; }
+    }
 	/// <summary>
 	/// Returns the current state of the game, indicating which screen is
 	/// currently being used

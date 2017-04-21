@@ -1,4 +1,4 @@
-Microsoft (R) Visual C# Compiler version 4.6.1586.0
+Microsoft (R) Visual C# Compiler version 4.6.1590.0
 for C# 5
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -6,3 +6,4 @@ This compiler is provided as part of the Microsoft (R) .NET Framework, but only 
 
 src\Model\AIPlayer.cs(19,18): warning CS0660: 'AIPlayer.Location' defines operator == or operator != but does not override Object.Equals(object o)
 src\Model\AIPlayer.cs(19,18): warning CS0661: 'AIPlayer.Location' defines operator == or operator != but does not override Object.GetHashCode()
+src\Model\SeaGrid.cs(26,36): warning CS0169: The field 'SeaGrid._theGame' is never used
