@@ -165,12 +165,9 @@ public static class GameController
 		bool isHuman = false;
 		isHuman = object.ReferenceEquals(_theGame.Player, HumanPlayer);
 
-		if (isHuman)
-        {
+		if (isHuman) {
 			UtilityFunctions.Message = "You " + result.ToString();
-		}
-        else
-        {
+		} else {
 			UtilityFunctions.Message = "The AI " + result.ToString();
 		}
 
@@ -178,7 +175,8 @@ public static class GameController
 			case ResultOfAttack.Destroyed:
 				PlayHitSequence(result.Row, result.Column, isHuman);
 				Audio.PlaySoundEffect(GameResources.GameSound("Sink"));
-                break;
+
+				break;
 			case ResultOfAttack.GameOver:
 				PlayHitSequence(result.Row, result.Column, isHuman);
 				Audio.PlaySoundEffect(GameResources.GameSound("Sink"));

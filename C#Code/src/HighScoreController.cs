@@ -16,6 +16,7 @@ using SwinGameSDK;
 /// </remarks>
 static class HighScoreController
 {
+	private const int NAME_WIDTH = 3;
 
 	private const int SCORES_LEFT = 490;
 	/// <summary>
@@ -77,10 +78,9 @@ static class HighScoreController
 			string line = null;
 
 			line = input.ReadLine();
-            string[] strseparated = line.Split(' ');
 
-            s.Name = strseparated[0];
-			s.Value = Convert.ToInt32(strseparated[1]);
+			s.Name = line.Substring(0, NAME_WIDTH);
+			s.Value = Convert.ToInt32(line.Substring(NAME_WIDTH));
 			_Scores.Add(s);
 		}
 		input.Close();
@@ -107,7 +107,7 @@ static class HighScoreController
 		output.WriteLine(_Scores.Count);
 
 		foreach (Score s in _Scores) {
-			output.WriteLine(s.Name + " " + s.Value);
+			output.WriteLine(s.Name + s.Value);
 		}
 
 		output.Close();
@@ -179,7 +179,7 @@ static class HighScoreController
 			int x = 0;
 			x = SCORES_LEFT + SwinGame.TextWidth(GameResources.GameFont("Courier"), "Name: ");
 
-			SwinGame.StartReadingText(Color.White, 8, GameResources.GameFont("Courier"), x, ENTRY_TOP);
+			SwinGame.StartReadingText(Color.White, NAME_WIDTH, GameResources.GameFont("Courier"), x, ENTRY_TOP);
 
 			//Read the text from the user
 			while (SwinGame.ReadingText()) {
@@ -193,6 +193,9 @@ static class HighScoreController
 
 			s.Name = SwinGame.TextReadAsASCII();
 
+			if (s.Name.Length < 3) {
+				s.Name = s.Name + new string(Convert.ToChar(" "), 3 - s.Name.Length);
+			}
 
 			_Scores.RemoveAt(_Scores.Count - 1);
 			_Scores.Add(s);
