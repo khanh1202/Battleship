@@ -6,12 +6,18 @@ using System.Collections.Generic;
 //using System.Data;
 using System.Diagnostics;
 using SwinGameSDK;
+using System.Runtime.InteropServices;
 
 /// <summary>
 /// The menu controller handles the drawing and user interactions
 /// from the menus in the game. These include the main menu, game
 /// menu and the settings menu.
 /// </summary>
+
+public class Variables
+{
+	public static bool _isMute = false;
+}
 
 static class MenuController
 {
@@ -22,6 +28,9 @@ static class MenuController
 	/// <remarks>
 	/// These are the text captions for the menu items.
 	/// </remarks>
+
+	
+	
 	private static readonly string[][] _menuStructure = {
 		new string[] {
 			"PLAY",
@@ -37,10 +46,13 @@ static class MenuController
 		new string[] {
 			"EASY",
 			"MEDIUM",
-			"HARD"
+			"HARD",
+ 			"MUTE"
+		
 		}
 
 	};
+	
 	private const int MENU_TOP = 575;
 	private const int MENU_LEFT = 30;
 	private const int MENU_GAP = 0;
@@ -61,12 +73,14 @@ static class MenuController
 	private const int SETUP_MENU_EASY_BUTTON = 0;
 	private const int SETUP_MENU_MEDIUM_BUTTON = 1;
 	private const int SETUP_MENU_HARD_BUTTON = 2;
+    private const int SETUP_MENU_MUTE_BUTTON = 3;
 
-	private const int SETUP_MENU_EXIT_BUTTON = 3;
+    private const int SETUP_MENU_EXIT_BUTTON = 3;
 	private const int GAME_MENU_RETURN_BUTTON = 0;
 	private const int GAME_MENU_SURRENDER_BUTTON = 1;
 
 	private const int GAME_MENU_QUIT_BUTTON = 2;
+	
 	private static readonly Color MENU_COLOR = SwinGame.RGBAColor(2, 167, 252, 255);
 
 	private static readonly Color HIGHLIGHT_COLOR = SwinGame.RGBAColor(1, 57, 86, 255);
@@ -282,6 +296,7 @@ static class MenuController
 	/// </summary>
 	/// <param name="button">the button pressed</param>
 	private static void PerformSetupMenuAction(int button)
+
 	{
 		switch (button) {
 			case SETUP_MENU_EASY_BUTTON:
@@ -293,6 +308,14 @@ static class MenuController
 			case SETUP_MENU_HARD_BUTTON:
 				GameController.SetDifficulty(AIOption.Hard);
 				break;
+
+			case SETUP_MENU_MUTE_BUTTON:
+                // 
+                // Magical code to mute sound
+				Variables._isMute = true;
+				SwinGame.StopMusic();				
+                //
+                break;
 		}
 		//Always end state - handles exit button as well
 		GameController.EndCurrentState();
